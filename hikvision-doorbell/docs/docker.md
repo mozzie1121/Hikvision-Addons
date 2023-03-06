@@ -1,11 +1,11 @@
-# Running the addon as a standalone container
+# Running as a standalone container
 
 This program can run as a standalone Docker container, for all the Home Assistant installations without an add-on store available (e.g. _Home Assistant container_).
 
 ## Manually building and running
 To manually build and run the container, run the following from the `hikvision-doorbell` folder:
 
-- Build the image, specifying your architecture.
+- Build the image, specifying your architecture in the `BUILD_ARCH` parameter.
 For instance:
 ```bash
 docker build --build-arg=BUILD_ARCH=amd64 -t hikvision-doorbell .
@@ -18,7 +18,7 @@ docker run hikvision-doorbell
 
 ## Docker Compose
 
-An example `docker-compose.yml` is provided showing how to setup the required build args and the environment variables sourced from a `.env` file.
+An example [docker-compose.yml](../docker-compose.yml) is provided showing how to setup the required build args and the environment variables sourced from a `.env` file.
 
 - Create a `development.env` file with your own configuration values
     ```bash
@@ -31,7 +31,7 @@ An example `docker-compose.yml` is provided showing how to setup the required bu
     ```
 
 ## Configuration
-If no configuration is provided, the container uses the values from the `default_config.yaml` file present in this repository.
+If no configuration is provided, the container uses the values from the [default_config.yaml](../default_config.yaml) file present in this repository.
 
 The application uses [Goodconf](https://github.com/lincolnloop/goodconf) to manage its configuration.
 The configuration values are read from the environment variables or from a JSON/YAML file.

@@ -1,3 +1,39 @@
+[project]
+name = "hikvision-doorbell"
+description="Integrate your Hikvision doorbells into Home Assistant"
+readme = "README.md"
+authors = [
+  {name = "Pergola Fabio"}
+]
+maintainers = [
+  {name = "Carlo Mion"}
+]
+version = "0.0.0"
+#dynamic = ["version"] # The verison is computed dynamically. See `tool.setuptools.dynamic` section below.
+requires-python = ">=3.10"
+dependencies = [
+    'requests ~= 2.28.2',
+    'goodconf[yaml] ~= 3.0.0',
+    'loguru ~= 0.6.0',
+]
+
+[project.urls]
+documentation = "https://github.com/pergolafabio/Hikvision-Addons/tree/main/hikvision-sdk/docs"
+repository = "https://github.com/pergolafabio/Hikvision-Addons"
+changelog = "https://github.com/pergolafabio/Hikvision-Addons/blob/main/hikvision-sdk/CHANGELOG.md"
+
+# Declare development dependencies as optional
+[project.optional-dependencies]
+dev = [
+    "pip-tools ~= 6.12.3",
+    "flake8 ~= 6.0.0",
+    "black ~= 23.1.0",
+    "pre-commit ~= 3.1.1",
+    "pytest ~= 7.2.1",
+    "pytest-mock ~= 3.10.0"
+]
+
+# Configuration for pytest
 [tool.pytest.ini_options]
 pythonpath = [
   ".", "src",
